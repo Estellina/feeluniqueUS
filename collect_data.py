@@ -114,22 +114,22 @@ def collect_product_data():
     try:
         product_dict['brand'] = driver.find_element(
             By.CSS_SELECTOR, 'p[class~="u-flush-v"] strong').text
-        print(product_dict['brand'])
+
 
     except:
         pass
     # Product url
     try:
         product_dict['product_url'] = driver.current_url
-        print(product_dict['product_url'])
+
     except:
 
         pass
     # mean rating
     try:
-        product_dict['mean_rating'] = int(driver.find_element(
-            By.CSS_SELECTOR, 'span[class="Rating-average"]').get_attribute('data-aggregate-rating'))
-        print(product_dict['mean_rating'])
+        product_dict['mean_rating'] = driver.find_element(
+            By.CSS_SELECTOR, 'span[class="Rating-average"]').get_attribute('data-aggregate-rating')
+
     except:
 
         pass
